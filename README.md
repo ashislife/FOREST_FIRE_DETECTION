@@ -132,33 +132,23 @@ streamlit run app.py
 
 Step 4: Test the System
 Open browser at http://localhost:8501
-
 Go to Manual Prediction tab
-
 Enter parameters:
-
 FRP = 0 → No Fire
-
 FRP = 3 → Low Fire
-
 FRP = 10 → High Fire
 
 Click Analyze Fire Risk
 
 📧 Alert System
 When high fire is detected:
-
 Email Alert: Sent to configured email address
-
 SMS Alert: Sent to configured phone number (1 free SMS/day via TextBelt)
 
 🗺️ Live Satellite Feed
 Fetches real-time data from NASA FIRMS API
-
 Displays fire locations on interactive map
-
 Shows fire intensity with color coding
-
 Updates every 3 hours (satellite overpass frequency)
 
 
@@ -178,20 +168,14 @@ Classification Report:
 Add weather data (wind speed, humidity, temperature)
 
 Mobile app integration
-
 Deploy on cloud (AWS/GCP/Azure)
-
 WhatsApp alerts integration
-
 Historical fire trend analysis
-
 Fire risk prediction for next 24 hours
 
 👨‍💻 Author
 Project: Satellite Forest Fire Detection System
-
 Technology: Python, Streamlit, Machine Learning, NASA API
-
 Accuracy: 99.54%
 
 📝 Conclusion

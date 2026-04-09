@@ -1,6 +1,6 @@
 import requests
 import smtplib
-from email.mime.text import MIMEText  # ← MIMEText (all caps)
+from email.mime.text import MIMEText  
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 from config import EMAIL_FROM, EMAIL_PASSWORD, EMAIL_TO, PHONE_NUMBER
