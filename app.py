@@ -272,23 +272,23 @@ with tab1:
             
             # Map
             st.markdown("### 🗺️ Fire Location Map")
-            fig = go.Figure()
-            fig.add_trace(go.Scattermapbox(
-                lat=df['latitude'],
-                lon=df['longitude'],
-                mode='markers',
-                marker=dict(size=8, color='red', opacity=0.7),
-                text=df['bright_ti4'] if 'bright_ti4' in df.columns else None,
-                hoverinfo='text'
-            ))
-            fig.update_layout(
-                mapbox_style="dark",
-                mapbox_zoom=3,
-                mapbox_center={"lat": 20, "lon": 78},
-                height=500,
-                margin=dict(l=0, r=0, t=0, b=0)
-            )
-            st.plotly_chart(fig, use_container_width=True)
+            
+            if len(df) > 0:
+                fig = px.scatter_mapbox(
+                    df,
+                    lat='latitude',
+                    lon='longitude',
+                    color='bright_ti4' if 'bright_ti4' in df.columns else None,
+                    color_continuous_scale='Reds',
+                    zoom=4,
+                    height=500,
+                    title="Real-Time Fire Locations"
+                )
+                fig.update_layout(mapbox_style="open-street-map")
+                fig.update_layout(margin=dict(l=0, r=0, t=30, b=0))
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("No fire locations to display")
             
             # Data table
             with st.expander("📋 View Detailed Fire Data"):
